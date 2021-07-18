@@ -1,8 +1,8 @@
 import groupBy from 'lodash.groupby';
 import mapValues from 'lodash.mapvalues';
 
-export default function nestedGroupBy<Data extends object, Result = unknown>(
-  seq: Data[],
+export default function nestedGroupBy<Result = unknown>(
+  seq: object[],
   keys: string[]
 ): Result {
   if (!keys.length) {
@@ -15,3 +15,4 @@ export default function nestedGroupBy<Data extends object, Result = unknown>(
     return nestedGroupBy(value, rest);
   }) as Result;
 }
+
